@@ -7,9 +7,12 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 
 @Composable
-fun LoginScreen(onClick: () -> Unit) {
+fun LoginScreen(
+    email: String,
+    onClick: () -> Unit
+) {
     Text(
-        text = "Login",
+        text = "Login - $email",
         modifier = Modifier.clickable { onClick() }
     )
 }

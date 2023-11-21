@@ -7,10 +7,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 
 @Composable
-fun RegistrationScreen(onClick: () -> Unit) {
+fun RegistrationScreen(onClick: (email: String) -> Unit) {
     Text(
         text = "Register",
-        modifier = Modifier.clickable { onClick() }
+        modifier = Modifier.clickable { onClick("utk123@gmail.com") }
     )
 }
 
