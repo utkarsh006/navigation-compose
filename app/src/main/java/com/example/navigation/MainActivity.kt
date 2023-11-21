@@ -32,11 +32,15 @@ fun App() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "registration"){
         composable(route = "registration"){
-            RegistrationScreen(navController)
+            RegistrationScreen{
+                navController.navigate("login")
+            }
         }
 
         composable(route = "login"){
-            LoginScreen(navController)
+            LoginScreen{
+                navController.navigate("main")
+            }
         }
 
         composable(route = "main"){

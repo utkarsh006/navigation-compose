@@ -7,10 +7,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 
 @Composable
-fun RegistrationScreen(navController: NavController) {
+fun RegistrationScreen(onClick: () -> Unit) {
     Text(
         text = "Register",
-        modifier = Modifier.clickable { navController.navigate("login") }
+        modifier = Modifier.clickable { onClick() }
     )
 }
 
