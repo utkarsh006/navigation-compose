@@ -27,11 +27,9 @@ fun LastScreen(navController: NavController) {
             text = "Last Screen",
             fontSize = 40.sp
         )
+
         Button(
             onClick = {
-//            navController.popBackStack()
-//            navController.popBackStack()
-
                 navController.navigate(NavScreen.HomeScreen.route) {
                     popUpTo(NavScreen.HomeScreen.route) {
                         inclusive = true
