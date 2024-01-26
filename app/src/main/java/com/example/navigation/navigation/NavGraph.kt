@@ -27,6 +27,7 @@ fun NavGraph(navController: NavHostController) {
             arguments = listOf(
                 navArgument("name") {
                     type = NavType.StringType
+                    defaultValue = ""
                 },
                 navArgument("age") {
                     type = NavType.IntType

@@ -10,8 +10,11 @@ sealed class NavScreen(val route: String) {
     /* Passing all arguments
     object DetailsScreen : NavScreen("$DetailsScreenPath/{name}/{age}") */
 
-    // Passing only name argument
-    object DetailsScreen : NavScreen("$DetailsScreenPath/{name}?age={age}")
+    /* Passing only name argument
+    object DetailsScreen : NavScreen("$DetailsScreenPath/{name}?age={age}") */
+
+    // making both arguments as optional
+    object DetailsScreen : NavScreen("$DetailsScreenPath?name={name}&age={age}")
 
     object LastScreen : NavScreen(LastScreenPath)
 }
