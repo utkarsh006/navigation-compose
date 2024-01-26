@@ -6,6 +6,12 @@ const val LastScreenPath = "last_screen"
 
 sealed class NavScreen(val route: String) {
     object HomeScreen : NavScreen(HomeScreenPath)
-    object DetailsScreen : NavScreen("$DetailsScreenPath/{name}/{age}")
+
+    /* Passing all arguments
+    object DetailsScreen : NavScreen("$DetailsScreenPath/{name}/{age}") */
+
+    // Passing only name argument
+    object DetailsScreen : NavScreen("$DetailsScreenPath/{name}?age={age}")
+
     object LastScreen : NavScreen(LastScreenPath)
 }

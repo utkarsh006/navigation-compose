@@ -53,8 +53,11 @@ fun HomeScreen(navController: NavController) {
 
         Button(
             onClick = {
-                if (name.isNotEmpty() && age.isNotEmpty()) {
-                    navController.navigate("$DetailsScreenPath/$name/${age.toInt()}")
+                if (name.trim().isNotEmpty()) {
+                    /* Passing all arguments
+                    navController.navigate("$DetailsScreenPath/$name/${age.toInt()}")   */
+                    // Passing only name argument
+                    navController.navigate("$DetailsScreenPath/${name.trim()}")
                 }
             }
         ) {

@@ -30,6 +30,7 @@ fun NavGraph(navController: NavHostController) {
                 },
                 navArgument("age") {
                     type = NavType.IntType
+                    defaultValue = 10
                 }
             )
         ) {
