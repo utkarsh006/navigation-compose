@@ -22,7 +22,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.navigation.navigation.DetailsScreenPath
+import com.example.navigation.model.User
+import com.example.navigation.navigation.NavScreen
 
 @Composable
 fun HomeScreen(navController: NavController) {
@@ -54,18 +55,14 @@ fun HomeScreen(navController: NavController) {
         Button(
             onClick = {
                 if (name.trim().isNotEmpty() && age.trim().isNotEmpty()) {
-                    /* Passing all arguments
-                    navController.navigate("$DetailsScreenPath/$name/${age.toInt()}")   */
 
-                    /* Passing only name argument
-                    navController.navigate("$DetailsScreenPath/${name.trim()}") */
+                    val user = User(name.trim(), age.trim().toInt())
 
-                    // making both arguments as optional
-                    navController.navigate(
-                        // passing only age
-                        //"$DetailsScreenPath?age=${age.trim().toInt()}"
-                        "$DetailsScreenPath?name=${name}&age=${age.trim().toInt()}"
-                    )
+                    navController.currentBackStackEntry?.savedStateHandle?.apply {
+                        set("user", user)
+                    }
+
+                    navController.navigate(NavScreen.DetailsScreen.route)
                 }
             }
         ) {
